@@ -1,22 +1,32 @@
 #include <iostream>
-#include <math.h>       /* floor */
+
+
 
 using namespace std;
 
 
-int main(int argc, char** argv) {
-	
-	 int sevenNumbers[7], pos, ny, tmp;
 
-    int size = 7;
+int main(int argc, const char * argv[]) {
 
     
 
-    cout << "Mata in sju heltal" << endl;
+    /*Bonus 12: Instickare*/
+
+    int arr[7] = {};
+
+    int ny;
+
+    int position;
+
+    int tmp;
+
+    
 
     for(int i = 0; i < 7; i++) {
 
-        cin >> sevenNumbers[i];
+        cout << "Skriv in ett tal för array pos: " << i << endl;
+
+        cin >>  arr[i];
 
     }
 
@@ -28,34 +38,58 @@ int main(int argc, char** argv) {
 
     
 
-    cout << "Skriv in en position" << endl;
+    cout << "Vilken position 0-6 ska det nya värdet in på?" << endl;
 
-    cin >> pos;
+    cin >> position;
 
     
 
-    for(int i = size - 1; i > pos - 1; i--) {
+    //Skriver ut arrayen
 
-        tmp = sevenNumbers[i-1];
+    cout << "Gamla arrayen: " << endl;
 
-        sevenNumbers[i] = tmp;
+    for(int i = 0; i < 7; i++) {
+
+        cout <<  arr[i] << endl;
 
     }
 
+    // 1 2 3 4 5 6 7
+
+    // 1 n 2 3 4 5 6
+
+    tmp = arr[position];
+
     
 
-    sevenNumbers[pos-1] = ny;
+    for(int i = 7; i > position; i--) {
 
-    
-
-    cout << "Ny array:" << endl;
-
-    for(int i = 0; i < size; i++ ) {
-
-        cout << sevenNumbers[i] << endl;
+        arr[i] = arr[i-1];
 
     }
 
    
-	return 0;
+
+    arr[position] = ny;
+
+    
+
+    //Skriver ut arrayen
+
+    cout << "Nya arrayen: " << endl;
+
+    for(int i = 0; i < 7; i++) {
+
+        cout <<  arr[i] << endl;
+
+    }
+
+    
+
+    return 0;
+
+
+
 }
+
+
