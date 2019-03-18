@@ -3,37 +3,33 @@
 #include <string>
 #include <cstdlib>
 #include <ctime> 
+#include <windows.h>
+#include <string.h>
 
 using namespace std;
 
 
 int random(int min, int max) {
 
-    int tiden = time(0);
-
-    srand(tiden);
-
     int range = max-min + 1;
-
     int slump =  rand()%range + min;
-
-
     return slump;
-
 }
 
 int main(int argc, char** argv) {
 	
-	 
-	int foo[5];
+	int yatzy[5];
+	srand(time(0));
 	
+	//Slumpar 5 tärningskast
 	for(int i = 0; i < 5; i++) {
-		foo[i] = random(1,6);
+		yatzy[i] = random(1,6);
 	}
 	
+	//Skriver ut omgång 1
 	for(int i = 0; i < 5; i++) {
-		cout << foo[i] << endl;
+		cout << yatzy[i] << endl;
 	}
 	
-	return 0;
+	return 0;	
 }
